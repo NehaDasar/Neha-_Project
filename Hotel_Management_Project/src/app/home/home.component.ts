@@ -9,25 +9,24 @@ import { CommonServiceService } from '../common/common-service.service';
 })
 export class HomeComponent {
 
+  showLogOut:boolean = false;
   constructor(private router : Router,
-    private commonService : CommonServiceService){}
+    private commonService :CommonServiceService)
+    {}
 
-
-  journey(journey:string){
-
-    if(journey ==='admin'){
-      this.commonService.journey ='admin'
+  journey(journey: string) {
+    this.showLogOut = true;
+    if (journey === 'admin') {
+      this.commonService.journey = 'admin';
       this.router.navigateByUrl('admin');
     }
-    else if(journey === 'owner'){
-      this.commonService.journey='owner'
+    else if (journey === 'owner') {
+      this.commonService.journey = 'owner';
       this.router.navigateByUrl('owner');
     }
-    else{
-      this.commonService.journey = 'user'
+    else {
+      this.commonService.journey = 'user';
       this.router.navigateByUrl('user');
-   
-  }  
-
-}
+    }
+  }
 }
