@@ -1,5 +1,34 @@
-<div>
-    <br>
-    <button mat-raised-button color="primary" (click)="login()">Login</button><br><br>
-    <button (click)="signUp()" mat-raised-button color="accent">Don't Have an Account?<br>Please Sign-Up Here</button>
+<!-- <div>
+    <div class="btn-container">
+        <button mat-raised-button color="primary"  class="btns" (click)="back()">Back</button>
+        <button mat-raised-button color="primary"  class="btns" (click)="login()">Login</button>
+        <button routerLink="/owner/ownerSignUp"  class="btns" mat-raised-button color="primary"> Sign Up</button>
+        <button routerLink="" mat-raised-button  class="btns" color="accent"> My Hotels</button>
+    </div>
+
+</div> -->
+<div class="container">
+    <button mat-fab color="warn" aria-label="Home" (click)="back()">
+        <mat-icon>home</mat-icon>
+      </button><br><br>
+<!-- <button mat-raised-button color="primary"  class="btns" (click)="back()">Back</button> -->
+<form class=".form-container" [formGroup]="loginForm" >
+
+    <mat-form-field>
+        <mat-label>username</mat-label>
+        <input matInput formControlName="userName">
+    </mat-form-field>
+     <br>
+    <mat-form-field >
+        <mat-label>Password</mat-label>
+        <input matInput type="password"  formControlName="password">
+    </mat-form-field>
+
+    <div>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>&nbsp;
+        <a routerLink="/owner/ownerSignUp" mat-raised-button color="accent">New Owner?</a>
+    </div>
+
+</form>
 </div>
+

@@ -1,5 +1,5 @@
 .container {
-    background-image: url('/assets/images/landing3.jpg');  
+    background-image: url('/assets/images/taj.jpg');  
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -7,6 +7,9 @@
 .btns{
     padding: 6px 6px;
     margin: 5px;
+    justify-content: center;
+    align-items: center;
+  
 }
 .btn-container{
     position: relative;

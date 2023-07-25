@@ -1,19 +1,30 @@
 {
-  "posts": [
+  "owner": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "UserName": "Neha",
+      "Email": "fadewar.neha@gmail.com",
+      "Mobile": "1234567899",
+      "Password": "Dneh@123",
+      "Gender": "female",
+      "id": 1
+    },
+    {
+      "UserName": "Neha",
+      "Email": "fadewar.neha@gmail.com",
+      "Mobile": "953451377",
+      "Password": "Aneh@123",
+      "Gender": "female",
+      "id": 2
+    },
+    {
+      "UserName": "Arihant",
+      "Email": "arihant@gmail.com",
+      "Mobile": "745646",
+      "Password": "Arihant",
+      "Gender": "male",
+      "id": 3
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "admin": [],
+  "user": []
 }

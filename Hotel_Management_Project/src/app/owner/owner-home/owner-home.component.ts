@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CommonApiCallService } from 'src/app/common/common-api-call.service';
+import { CommonServiceService } from 'src/app/common/common-service.service';
 
 @Component({
   selector: 'app-owner-home',
@@ -8,15 +11,68 @@ import { Router } from '@angular/router';
 })
 export class OwnerHomeComponent {
 
-  constructor(private router : Router){
+  loginForm!:FormGroup;
+  endPoint!:string;
+  ownerData : any;
+  validUser: boolean = false;
+
+  constructor(private router: Router,
+    private fb: FormBuilder,
+    private commonApiCallService: CommonApiCallService,
+    private commonService: CommonServiceService) {
+
+  }
+ 
+  ngOnInit(){
+    this.endPoint = this.commonService.journey;
+    console.log('endPoint...',this.endPoint);
+    this.loginFormDetails();
+  }
+
+  loginFormDetails(){
+    this.loginForm = this.fb.group({
+      userName:[],
+      password:[]
+    })
+  }
+
+
+  login() {
+    console.log(this.loginForm.value);
+    this.getOwnerApiData();
+    console.log('this.ownerData', this.ownerData);
+
+    if (this.ownerData) {
+      this.isValidUser();
+      if (this.validUser) {
+        this.router.navigateByUrl('owner/ownerSuccess');
+      }
+      else {
+        this.router.navigateByUrl('owner/ownerHome');
+      }
+    }
+  }
+  back1(){
+    this.router.navigateByUrl('home')
+  }
+  back(){
+    this.router.navigateByUrl('homeComponent')
+  }
+  getOwnerApiData(){
+    this.commonApiCallService.getApiCall(this.endPoint).subscribe(getOwnerResponse=>{
+      this.ownerData = getOwnerResponse;
+    })
+    console.log('this.ownerData',this.ownerData);
     
   }
 
-  login(){
-    this.router.navigateByUrl('owner/ownerLogin')
-  }
-  signUp(){
-    this.router.navigateByUrl('owner/ownerSignUp')
+  isValidUser(){
+    this.ownerData.forEach((element:any)=>{
+      if(element.UserName === this.loginForm.value.userName && element.Password === this.loginForm.value.password) {
+        this.validUser = true;
+      }     
+    });
+    return
   }
 
 }

@@ -5,7 +5,7 @@ import { OwnersignupComponent } from './ownersignup.component';
 describe('OwnersignupComponent', () => {
   let component: OwnersignupComponent;
   let fixture: ComponentFixture<OwnersignupComponent>;
-
+  
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [OwnersignupComponent]

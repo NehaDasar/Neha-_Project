@@ -6,6 +6,8 @@ import { MatRadioModule} from '@angular/material/radio';
 import { MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -19,7 +21,10 @@ import { HttpClientModule} from '@angular/common/http';
     MatRadioModule,
     MatButtonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatIconModule
+   
   ],
   exports :[
     MatCardModule,
@@ -27,7 +32,9 @@ import { HttpClientModule} from '@angular/common/http';
     MatRadioModule,
     MatButtonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatIconModule,
   ]
 })
 export class SharedModule { }

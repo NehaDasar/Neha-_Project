@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { OwnerHomeComponent } from './owner-home/owner-home.component';
 import { OwnersignupComponent } from './ownersignup/ownersignup.component';
 import { OwnerloginComponent } from './ownerlogin/ownerlogin.component';
+import { OwnerSuccessComponent } from './owner-success/owner-success.component';
+import { NewHotelRegistrationComponent } from './new-hotel-registration/new-hotel-registration.component';
 
 const routes: Routes = [
   { path : '', component : OwnerHomeComponent},
+  { path : 'ownerHome', component : OwnerHomeComponent},
   { path : 'ownerSignUp', component : OwnersignupComponent},
-  { path : 'ownerLogin', component : OwnerloginComponent}
+  { path : 'ownerLogin', component : OwnerloginComponent},
+  { path : 'ownerSuccess', component : OwnerSuccessComponent},
+  { path : 'newHotelRegistration',component : NewHotelRegistrationComponent }
 ];
 
 @NgModule({
