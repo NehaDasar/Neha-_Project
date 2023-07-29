@@ -23,6 +23,38 @@
       "Password": "Arihant",
       "Gender": "male",
       "id": 3
+    },
+    {
+      "UserName": "Anand",
+      "Email": "redcyber@gmail.com",
+      "Mobile": "8734516435",
+      "Password": "Anand@123",
+      "Gender": "male",
+      "id": 4
+    },
+    {
+      "UserName": "Arihant",
+      "Email": "",
+      "Mobile": "",
+      "Password": "",
+      "Gender": "",
+      "id": 5
+    },
+    {
+      "UserName": "jhdsv",
+      "Email": "",
+      "Mobile": "",
+      "Password": "",
+      "Gender": "",
+      "id": 6
+    },
+    {
+      "UserName": "Priya",
+      "Email": "priya@gmail.com",
+      "Mobile": "68276278",
+      "Password": "Priya@123",
+      "Gender": "female",
+      "id": 7
     }
   ],
   "admin": [],

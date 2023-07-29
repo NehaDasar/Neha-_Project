@@ -6,10 +6,19 @@
     padding: 6px 6px;
     margin: 5px;
 }
-.container{
+.background{
     background-color: yellowgreen;
-    height: 1000px;
-    width: 100%;
+}
+
+.container{
+    
+    // height: 1000px;
+    // width: 100%;
+    display: flex;
+  justify-content: center;
+  //align-items: center;
+  height: 100vh;
+  align-items: flex-start;
 }
 .form-container{
     text-align: center;
@@ -19,4 +28,8 @@
     width: 300px;
     padding: 6px 6px;
     background-color: antiquewhite;
+}
+.heading{
+
+text-align: center;
 }

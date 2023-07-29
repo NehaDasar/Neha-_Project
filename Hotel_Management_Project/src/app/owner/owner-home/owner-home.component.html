@@ -1,19 +1,15 @@
-<!-- <div>
-    <div class="btn-container">
-        <button mat-raised-button color="primary"  class="btns" (click)="back()">Back</button>
-        <button mat-raised-button color="primary"  class="btns" (click)="login()">Login</button>
-        <button routerLink="/owner/ownerSignUp"  class="btns" mat-raised-button color="primary"> Sign Up</button>
-        <button routerLink="" mat-raised-button  class="btns" color="accent"> My Hotels</button>
-    </div>
 
-</div> -->
+
+<div class="background">
+    <button mat-fab color="warn" aria-label="Home" (click)="back1()">
+    <mat-icon>home</mat-icon>
+  </button><br><br>
+<button mat-raised-button color="primary"  class="btns" (click)="back()">Back</button> 
+
 <div class="container">
-    <button mat-fab color="warn" aria-label="Home" (click)="back()">
-        <mat-icon>home</mat-icon>
-      </button><br><br>
-<!-- <button mat-raised-button color="primary"  class="btns" (click)="back()">Back</button> -->
+   
 <form class=".form-container" [formGroup]="loginForm" >
-
+    <h1 class="heading">Login Form</h1>
     <mat-form-field>
         <mat-label>username</mat-label>
         <input matInput formControlName="userName">
@@ -31,4 +27,21 @@
 
 </form>
 </div>
+</div>>
 
+<form class="example-form" [formGroup]="forgetPasswordForm" *ngIf="showForgetPasswordForm">
+
+    <mat-form-field class="example-full-width">
+        <mat-label>New Password</mat-label>
+        <input matInput formControlName="newPassword">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" formControlName="confirmPassword">
+    </mat-form-field>
+
+    <div>
+        <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+    </div>
+</form>

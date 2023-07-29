@@ -11,10 +11,13 @@ import { CommonServiceService } from 'src/app/common/common-service.service';
 })
 export class OwnerHomeComponent {
 
+
   loginForm!:FormGroup;
   endPoint!:string;
   ownerData : any;
   validUser: boolean = false;
+  forgetPasswordForm!:FormGroup;
+  showForgetPasswordForm: boolean = false;
 
   constructor(private router: Router,
     private fb: FormBuilder,
@@ -22,57 +25,101 @@ export class OwnerHomeComponent {
     private commonService: CommonServiceService) {
 
   }
- 
-  ngOnInit(){
-    this.endPoint = this.commonService.journey;
-    console.log('endPoint...',this.endPoint);
-    this.loginFormDetails();
-  }
-
-  loginFormDetails(){
-    this.loginForm = this.fb.group({
-      userName:[],
-      password:[]
-    })
-  }
-
-
-  login() {
-    console.log(this.loginForm.value);
-    this.getOwnerApiData();
-    console.log('this.ownerData', this.ownerData);
-
-    if (this.ownerData) {
-      this.isValidUser();
-      if (this.validUser) {
-        this.router.navigateByUrl('owner/ownerSuccess');
-      }
-      else {
-        this.router.navigateByUrl('owner/ownerHome');
-      }
-    }
-  }
   back1(){
-    this.router.navigateByUrl('home')
-  }
-  back(){
     this.router.navigateByUrl('homeComponent')
   }
-  getOwnerApiData(){
-    this.commonApiCallService.getApiCall(this.endPoint).subscribe(getOwnerResponse=>{
-      this.ownerData = getOwnerResponse;
-    })
-    console.log('this.ownerData',this.ownerData);
+    back(){
+     this.router.navigateByUrl('homeComponent')
+    }
+ 
+    ngOnInit(){
+      this.endPoint = this.commonService.journey;
+      console.log('endPoint...',this.endPoint);
+      this.loginFormDetails();
+    }
+  
+    loginFormDetails(){
+      this.loginForm = this.fb.group({
+        userName:[],
+        password:[]
+      })
+    }
+    forgoPasswordFormDetails(){
+      this.forgetPasswordForm = this.fb.group({
+        newPassword:[],
+        confirmPassword:[]
+      })
+    }
     
-  }
-
-  isValidUser(){
-    this.ownerData.forEach((element:any)=>{
-      if(element.UserName === this.loginForm.value.userName && element.Password === this.loginForm.value.password) {
-        this.validUser = true;
-      }     
-    });
-    return
-  }
-
+    login() {
+      console.log(this.loginForm.value);
+      if(this.loginForm.value.userName ){
+         this.commonService.userName = this.loginForm.value.userName ;
+      }
+      this.getOwnerApiData();
+      console.log('this.ownerData', this.ownerData);
+  
+      if (this.ownerData) {
+        this.isValidUser();
+        if (this.validUser) {
+          this.router.navigateByUrl('owner/ownerSuccess');
+        }
+        else {
+          this.router.navigateByUrl('owner/ownerHome');
+        }
+      }
+    }
+  
+    getOwnerApiData(){
+      this.commonApiCallService.getApiCall(this.endPoint).subscribe(getOwnerResponse=>{
+        this.ownerData = getOwnerResponse;
+      })
+      console.log('this.ownerData',this.ownerData);
+      
+    }
+  
+    isValidUser(){
+      this.ownerData.forEach((ownerData:any)=>{
+        if(ownerData.UserName === this.loginForm.value.userName && ownerData.Password === this.loginForm.value.password) {
+          this.validUser = true;
+        }     
+      });
+      return
+    }
+  
+    forgetPassword(){
+      this.showForgetPasswordForm = !this.showForgetPasswordForm;
+      this.forgoPasswordFormDetails();
+    }
+  
+    submit(){
+      if(this.ownerData ){
+        this.updatePassword();
+       }
+       else{
+         this.getOwnerApiData();
+         this.updatePassword();
+       }
+       this.showForgetPasswordForm = !this.showForgetPasswordForm;
+    }
+    updatePassword(){
+      var user:any;
+      this.ownerData.forEach((data:any)=>{
+        if(data.UserName ===  this.loginForm.value.userName){
+          user = data;
+        }
+        console.log('user',user);
+        
+      }) 
+      if(user){
+        let request = {
+          Password : this.forgetPasswordForm.value.newPassword
+        }
+          this.commonApiCallService.patchApiCall(this.endPoint,request,user.id ).subscribe((respo:any)=>{
+            console.log(respo);
+            
+          })
+      }
+    }
 }
+
