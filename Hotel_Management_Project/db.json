@@ -12,7 +12,7 @@
       "UserName": "Neha",
       "Email": "fadewar.neha@gmail.com",
       "Mobile": "953451377",
-      "Password": "Aneh@123",
+      "Password": "Neha@123",
       "Gender": "female",
       "id": 2
     },
@@ -58,5 +58,40 @@
     }
   ],
   "admin": [],
-  "user": []
+  "user": [],
+  "hotelDetails": [
+    {
+      "ownerName": "Anand",
+      "ownerContact": "83658765",
+      "hotelName": "Hotel Marine Plaza",
+      "hotelAddress": "Dadar",
+      "hotelContact": "75634543",
+      "hotelMenu": "Veg,  Non veg",
+      "roomsAvailable": "5000",
+      "password": "Anand123",
+      "id": 1
+    },
+    {
+      "ownerName": "Arihant",
+      "ownerContact": "445665",
+      "hotelName": "Arihant",
+      "hotelAddress": "Mumbai",
+      "hotelContact": "554666",
+      "hotelMenu": "veg",
+      "roomsAvailable": "2000",
+      "password": "Arihant@123",
+      "id": 2
+    },
+    {
+      "ownerName": "Neha",
+      "ownerContact": "6767676666",
+      "hotelName": "Hotel Taj",
+      "hotelAddress": "Mumbai",
+      "hotelContact": "767676",
+      "hotelMenu": "Veg",
+      "roomsAvailable": "3000",
+      "password": "Neha@123",
+      "id": 3
+    }
+  ]
 }

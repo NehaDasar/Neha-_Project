@@ -8,6 +8,7 @@ import { OwnerloginComponent } from './ownerlogin/ownerlogin.component';
 import { SharedModule } from '../common/shared/shared.module';
 import { NewHotelRegistrationComponent } from './new-hotel-registration/new-hotel-registration.component';
 import { OwnerSuccessComponent } from './owner-success/owner-success.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { OwnerSuccessComponent } from './owner-success/owner-success.component';
     OwnersignupComponent,
     OwnerloginComponent,
     NewHotelRegistrationComponent,
-    OwnerSuccessComponent
+    OwnerSuccessComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,

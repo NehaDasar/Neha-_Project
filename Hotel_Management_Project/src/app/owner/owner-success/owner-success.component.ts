@@ -14,7 +14,6 @@ export class OwnerSuccessComponent {
   // hotelRegistration(){
   //    this.router.navigateByUrl('owner/newHotelRegistration')
   // }
-
   hotelDetails:any;
   userName!: string;
   userHotelDetails:any[]=[]
