@@ -1,6 +1,3 @@
-<!-- <button mat-raised-button color="accent" (click)="hotelRegistration()">New Hotel registration</button>
-<button mat-raised-button color="accent">My Hotel List</button> -->
-
 <button mat-raised-button color="accent" (click)="hotelRegistration()">New Hotel registration</button>
 <button mat-raised-button color="accent" (click)="myHotelDetails()">My Hotel Details</button>
 
@@ -13,6 +10,7 @@
         <th>Hotel Address</th>
         <th>Hotel Contact</th>
         <th>Hotel Menu</th>
+        <th> Hotel Images</th>
         <th>Delete</th>
         <th>Edit</th>
     </tr>
@@ -23,8 +21,9 @@
        <td>{{hotelData.hotelAddress}}</td>
        <td>{{hotelData.hotelContact}}</td>
        <td>{{hotelData.hotelMenu}}</td>
-       <td><mat-icon >delete</mat-icon></td>
-       <td><mat-icon >mode_edit</mat-icon></td>
+       <td ><img *ngIf="hotelData.hotelImages" [src]="hotelData.hotelImages" height="100" width="150"></td>
+       <td><mat-icon (click)="delete(hotelData.id)">delete</mat-icon></td>
+       <td><mat-icon (click)="edit(hotelData.id)" >mode_edit</mat-icon></td>
     </tr>
 </table>
 </div>

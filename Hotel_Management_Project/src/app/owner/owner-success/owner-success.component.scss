@@ -3,3 +3,14 @@ table,tr,th,td{
     border-collapse: collapse;
     padding: 5px 5px;
 }
+// ::ng-deep mat-dialog-container.mat-mdc-dialog-container.mdc-dialog.cdk-dialog-container.mdc-dialog--open .mdc-dialog__container .mat-mdc-dialog-surface.mdc-dialog__surface{
+//     background-color: rgb(252, 87, 230);
+// }
+::ng-deep .mdc-dialog__container .mat-mdc-dialog-surface.mdc-dialog__surface{
+    background-color: rgb(252, 87, 230);
+}
+
+
+.dialog-container{
+    background-color: aquamarine;
+}

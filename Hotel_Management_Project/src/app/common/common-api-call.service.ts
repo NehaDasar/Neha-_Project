@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CommonApiCallService {
+ 
+ 
   url = 'http://localhost:3000/';
   constructor(private http: HttpClient) { }
   
@@ -13,12 +15,16 @@ export class CommonApiCallService {
     return this.http.post(url, formData);
   }
 
-  getApiCall(endPoint:string){
-    let url = this.url + endPoint;
+  getApiCall(endPoint:string, id?:number){
+    let url = id ? this.url + endPoint + '/' + id : this.url + endPoint;
     return this.http.get(url);
   }
-  patchApiCall(endPoint:any,data:any,id:number) {
+  patchApiCall(endPoint:any,data:any,id:number):any {
     let url = this.url + endPoint + '/' + id;
-    return this.http.patch(url,data) 
+    return this.http.patch(url,data);
+  }
+  deleteApiCall(endPoint:string,id:number){
+    let url = this.url + endPoint + '/' + id;
+    return this.http.delete(url);
   }
 }

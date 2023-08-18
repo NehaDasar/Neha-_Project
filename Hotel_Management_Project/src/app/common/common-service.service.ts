@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 // import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
@@ -9,7 +10,10 @@ export class CommonServiceService {
   journey!:string;
   userName! :string;
   forgotPassword!:boolean;
-  // constructor(private toastrService:ToastrService) { }
+  id!: any;
+  dataById:any;
+  
+  constructor(private toastrService:ToastrService) { }
 
   whiteSpaceValidator(nameFieldValue:any){
     let data = nameFieldValue.value;
@@ -18,7 +22,8 @@ export class CommonServiceService {
     return isNotValid ? {whiteSpace:true} : null
   }
 
-  warningToaster(title:any,msg:any,configuration:any){
-      // this.toastrService.warning(title,msg,configuration)
+  warningToaster( msg:any, title:any, configuration:any ){
+      this.toastrService.warning( msg, title, configuration)
   }
+
 }
