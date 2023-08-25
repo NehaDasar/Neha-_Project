@@ -53,6 +53,40 @@
       "Password": "Sharu@123",
       "Gender": "female",
       "id": 7
+    },
+    {
+      "UserName": "poonam",
+      "Email": "poonambhapkar34@gmail.com",
+      "Mobile": "565656565",
+      "Password": "poonam@123",
+      "Gender": "female",
+      "File": "",
+      "id": 8
+    },
+    {
+      "UserName": "pooja",
+      "Email": "pooja@gamil.com",
+      "Mobile": "98989898",
+      "Password": "pooja@123",
+      "Gender": "female",
+      "File": "",
+      "companies": [
+        "wipro",
+        "IBM"
+      ],
+      "id": 9
+    },
+    {
+      "UserName": "NehaD",
+      "Email": "neha123@gmail.com",
+      "Mobile": "7878787878",
+      "Password": "Neha@123",
+      "Gender": "female",
+      "File": "",
+      "companies": [
+        "INFY"
+      ],
+      "id": 10
     }
   ],
   "hotelDetails": [
@@ -119,7 +153,7 @@
     {
       "ownerName": "poonam",
       "ownerContact": "999",
-      "hotelName": "jjjjj",
+      "hotelName": "Udpi",
       "hotelAddress": "puneiii",
       "hotelContact": "888",
       "hotelMenu": "ikikki",
@@ -141,20 +175,18 @@
       "id": 6
     },
     {
-      "ownerName": "poonam",
-      "ownerContact": "",
-      "hotelName": "",
-      "hotelAddress": "",
-      "hotelContact": "",
-      "hotelMenu": "",
-      "roomsAvailable": "",
-      "password": "",
+      "ownerName": "NehaD",
+      "ownerContact": "4545676789",
+      "hotelName": "Hotel Taj",
+      "hotelAddress": "Mumbai",
+      "hotelContact": "666555",
+      "hotelMenu": "Veg",
+      "roomsAvailable": "10000",
+      "password": "Neha@123",
       "hotelImages": [
-        "assets/images/hotel2.jpg",
-        "assets/images/flower.jpg",
-        "assets/images/istockphoto-1198272365-170667a.jpg"
+        "assets/images/dinning.jpg"
       ],
-      "id": 7
+      "id": 8
     }
   ]
 }

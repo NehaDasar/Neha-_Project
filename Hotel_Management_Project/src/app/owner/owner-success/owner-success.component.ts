@@ -94,4 +94,5 @@ export class OwnerSuccessComponent {
      this.commonService.dataById = this.dataById;
      this.router.navigateByUrl('owner/newHotelRegistration')
    }
-}
+ }
+ 

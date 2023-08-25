@@ -7,21 +7,22 @@ import {  MatDialogRef  } from '@angular/material/dialog';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-//res = 'YES';
-paneClass!: string;
-constructor(public dialogRef: MatDialogRef<DialogComponent> ,
-   ){
-    this.paneClass = 'dialog-container'
-   }
-
-
+ //res = 'YES';
+ paneClass!: string;
+ constructor(public dialogRef: MatDialogRef<DialogComponent> ,
+    ){
+     this.paneClass = 'dialog-container'
+    }
  
-
-onNoClick(): void {
-  this.dialogRef.close();
-}
-
-onYesClick(){
-  this.dialogRef.close('YES');
-}
-}
+ 
+  
+ 
+ onNoClick(): void {
+   this.dialogRef.close();
+ }
+ 
+ onYesClick(){
+   this.dialogRef.close('YES');
+ }
+ 
+ }

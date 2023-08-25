@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="btn-container" >
         
         <button mat-raised-button color="accent" (click)="journey('admin')" class="btns">Admin</button>
@@ -7,5 +7,12 @@
         <button mat-raised-button color="accent" *ngIf="showLogOut" class="btns">Log Out</button>
     </div>
 
-</div>
+</div> -->
 
+<div class="container">
+    
+    <button class="nav-button button1" (click)="journey('user')"> User</button>
+    <button class="nav-button button2" (click)="journey('admin')"> Admin</button>
+    <button class="nav-button button3" (click)="journey('owner')"> Owner </button>
+
+</div>

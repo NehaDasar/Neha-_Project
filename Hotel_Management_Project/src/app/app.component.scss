@@ -1,0 +1,21 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.example-button-row {
+    display: table-cell;
+    max-width: 600px;
+}
+section {
+    display: table;
+}
+
+.bgimg{
+    background-image: url('/assets/images/bookmyhotelhome.jpg');
+    min-height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.material-icons {
+    font-size: 48px;
+  }

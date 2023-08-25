@@ -1,5 +1,6 @@
 <button mat-raised-button color="primary" (click)="back()">Back</button>
 <mat-card>
+
     <mat-card-header>
         <h2>Owner Sign Up Form</h2>
     </mat-card-header>
@@ -7,31 +8,71 @@
         <form [formGroup]="signUpForm">
             <mat-form-field class="example-full-width">
                 <mat-label>Name</mat-label>
-                <input matInput formControlName="name" >
-              </mat-form-field><br>
+                <input matInput formControlName="name" > 
+                <!-- !false => true ; !true =>false -->
+               <mat-hint *ngIf="!signUpForm.get('name')?.touched">
+                Please Enter Name here
+              </mat-hint>
+               <mat-error *ngIf="signUpForm.get('name')?.errors?.['minlength'] && !signUpForm.get('name')?.errors?.['pattern']">
+                Minimum 5 characters are required
+              </mat-error>
+              <mat-error *ngIf="signUpForm.get('name')?.errors?.['pattern']">
+                pattern should matched
+              </mat-error>
+              <mat-error *ngIf="signUpForm.get('name')?.errors?.['whiteSpace'] ">
+                Name entered is containing white space
+              </mat-error>
+              </mat-form-field>
               <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
                 <input matInput formControlName="email" >
-              </mat-form-field><br>
+              </mat-form-field>
             <mat-form-field class="example-full-width">
               <mat-label>Mobile</mat-label>
               <input matInput formControlName="mobile" >
-            </mat-form-field><br>
+            </mat-form-field>
               <mat-form-field class="example-full-width">
                 <mat-label>Password</mat-label>
                 <input type="password" matInput formControlName="password" >
-              </mat-form-field><br>
+              </mat-form-field>
               <br>
               <mat-radio-group formControlName="gender" aria-label="Select an option">
                 <mat-radio-button value="male">Male</mat-radio-button>
                 <mat-radio-button value="female">Female</mat-radio-button>
                 <mat-radio-button value="other">Other</mat-radio-button>
-              </mat-radio-group>
+              </mat-radio-group> 
+
+              <mat-form-field>
+                <mat-label>compnies</mat-label>
+                <mat-select formControlName="compnies" multiple>
+                  <mat-option *ngFor="let compny of compnies" [value]="compny">{{compny}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+<!-- 
+              <mat-form-field appearance="outline">
+                <mat-label>Select a file</mat-label>
+                <input  type="file"  matInput formControlName="file" (change)="onFileSelected($event)">
+              </mat-form-field> -->
+
+              <!-- <div class="file-upload-container">
+                <input type="file" (change)="onFileSelected($event)" hidden>
+                <mat-form-field>
+                  <input matInput [value]="" readonly>
+                </mat-form-field>
+                <button mat-icon-button >
+                  <mat-icon>attach_file</mat-icon>
+                </button>
+              </div> -->
+          <!-- <br><br>
+                <input type="file"   formControlName="file"  (change)="onFileSelected($event)">
+          
+<br><br> -->
+
              <div>
               <button mat-raised-button color="primary" (click)="submit()">Submit</button>
              </div>
                 
-            
+               
           </form>
     </mat-card-content>
   </mat-card>
